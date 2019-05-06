@@ -42,6 +42,9 @@ class DecoderPowerOfTwo extends Decoder {
     }
 
     int capacity = (alphabetChars * config.bitConfig.bytesPerChunk) / config.bitConfig.charsPerChunk;
+    if (capacity == 0) {
+      capacity = encodedLength;
+    }
     return capacity;
   }
 
@@ -82,7 +85,11 @@ class DecoderPowerOfTwo extends Decoder {
       }
     }
 
-    final byte[] output = new byte[(alphabetChars * bytesPerChunk) / charsPerChunk];
+    int outputLength = (alphabetChars * bytesPerChunk) / charsPerChunk;
+    if ((outputLength == 0) && (inputLength > 0)) {
+      throw new IllegalArgumentException("Invalid input length " + inputLength);
+    }
+    final byte[] output = new byte[outputLength];
     int outputIndex = 0;
     int inputIndex = 0;
     while (inputIndex < inputLength) {
