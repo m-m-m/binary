@@ -19,6 +19,13 @@ public interface Binary extends Streamable {
   byte[] EMPTY_BYTE_ARRAY = new byte[0];
 
   /**
+   * @param index the index of the requested byte starting from {@code 1}.
+   * @return the requested byte. If the given index exceeds the {@link #getData() data} (is greater or equal to
+   *         {@link #getLength() length}) {@code 0} is returned.
+   */
+  byte getDataByte(int index);
+
+  /**
    * <b>ATTENTION</b>:<br/>
    * Sub-types often represent sensible data. Be careful to pass these data in raw form (unencrypted).
    *

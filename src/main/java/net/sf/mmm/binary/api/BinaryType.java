@@ -72,6 +72,17 @@ public class BinaryType implements Binary {
   }
 
   @Override
+  public byte getDataByte(int index) {
+
+    if (index < 0) {
+      throw new IndexOutOfBoundsException(Integer.toString(index));
+    } else if (index >= this.data.length) {
+      return 0;
+    }
+    return this.data[index];
+  }
+
+  @Override
   public byte[] getData() {
 
     return this.data.clone();
