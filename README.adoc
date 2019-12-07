@@ -1,0 +1,34 @@
+image:https://m-m-m.github.io/logo.png[logo,link="https://m-m-m.github.io"]
+
+= mmm-binary
+
+image:https://img.shields.io/github/license/m-m-m/binary.svg?label=License["Apache License, Version 2.0",link=https://github.com/m-m-m/binary/blob/master/LICENSE]
+image:https://img.shields.io/maven-central/v/io.github.m-m-m/mmm-binary.svg?label=Maven%20Central["Maven Central",link=https://search.maven.org/search?q=g:io.github.m-m-m]
+image:https://travis-ci.org/m-m-m/binary.svg?branch=master["build-status",link="https://travis-ci.org/m-m-m/binary"]
+
+The module `mmm-binary` provides a representation for binary data including codecs.
+
+== Features
+
+This library offers the following features:
+
+* `Streamable` as minimal API for a BLOB to read and write data based on streaming.
+* `StreamableBlob` and `StreamablePath` as generic implementations.
+* `Binary` as API for `Streamable` BLOBs that are available in memory and can be formatted using flexible encodings.
+* `BinaryCodec` as API for a codec that can convert a BLOB to a String and vice-versa.
+* Arbitrary codec implementations such as `Base16`, `Base58`, `Base64`, etc.
+
+== Usage
+
+Maven Dependency:
+```xml
+<dependency>
+  <groupId>io.github.m-m-m</groupId>
+  <artifactId>mmm-binary</artifactId>
+</dependency>
+```
+
+Module Dependency:
+```java
+  requires transitive io.github.mmm.binary;
+```

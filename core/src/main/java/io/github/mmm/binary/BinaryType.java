@@ -13,8 +13,7 @@ import io.github.mmm.binary.codec.BinaryCodec;
 /**
  * Datatype for binary data or BLOB (binary large object).
  *
- * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
- * @since 7.6.0
+ * @since 1.0.0
  */
 public class BinaryType implements Binary {
 
@@ -35,10 +34,12 @@ public class BinaryType implements Binary {
       Objects.requireNonNull(data, getClass().getSimpleName() + ".data");
     }
     if (data.length < getMinLength()) {
-      throw new IllegalArgumentException(getClass().getSimpleName() + ".data.length = " + data.length + " < " + getMinLength());
+      throw new IllegalArgumentException(
+          getClass().getSimpleName() + ".data.length = " + data.length + " < " + getMinLength());
     }
     if (data.length > getMaxLength()) {
-      throw new IllegalArgumentException(getClass().getSimpleName() + ".data.length = " + data.length + " > " + getMaxLength());
+      throw new IllegalArgumentException(
+          getClass().getSimpleName() + ".data.length = " + data.length + " > " + getMaxLength());
     }
     this.data = data;
   }

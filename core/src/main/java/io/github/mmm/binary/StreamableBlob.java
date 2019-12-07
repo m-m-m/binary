@@ -10,6 +10,7 @@ import java.sql.SQLException;
  *
  * @since 1.0.0
  */
+@SuppressWarnings("exports")
 public class StreamableBlob implements Streamable {
 
   private final Blob blob;

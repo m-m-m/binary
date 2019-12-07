@@ -10,8 +10,7 @@ import io.github.mmm.binary.codec.BinaryCodec;
  * This API is designed for smaller binary data and will cause it to be fully loaded into memory (Java heap). For binary
  * large objects (BLOB) (e.g. for generic files or documents) use other solutions like e.g. {@link java.sql.Blob}.
  *
- * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
- * @since 7.6.0
+ * @since 1.0.0
  */
 public interface Binary extends Streamable {
 

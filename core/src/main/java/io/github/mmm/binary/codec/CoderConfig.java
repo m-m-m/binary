@@ -4,6 +4,8 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * Stateless config and factory for {@link Decoder} and {@link Encoder}.
+ *
+ * @since 1.0.0
  */
 @SuppressWarnings("javadoc")
 abstract class CoderConfig {

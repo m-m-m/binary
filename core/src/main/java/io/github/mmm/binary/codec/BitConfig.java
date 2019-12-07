@@ -1,7 +1,7 @@
 package io.github.mmm.binary.codec;
 
 /**
- * TODO hohwille This type ...
+ * Configuration of bit parameters for power-of-two codecs.
  *
  * @since 1.0.0
  */
@@ -43,7 +43,8 @@ class BitConfig {
     this(bitCount, bytesPerChunk, charsPerChunk, null, null, null);
   }
 
-  public BitConfig(int bitCount, int bytesPerChunk, int charsPerChunk, int[] chars2decode, int[] shift4encode, int[] chunkChars4encode) {
+  public BitConfig(int bitCount, int bytesPerChunk, int charsPerChunk, int[] chars2decode, int[] shift4encode,
+      int[] chunkChars4encode) {
 
     super();
     this.bitCount = bitCount;

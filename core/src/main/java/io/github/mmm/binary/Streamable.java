@@ -4,9 +4,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * TODO hohwille This type ...
+ * Interface for an abstract BLOB that can be streamed.
  *
- * @since 7.6.1
+ * @since 1.0.0
  */
 public interface Streamable {
 

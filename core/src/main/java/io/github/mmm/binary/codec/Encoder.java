@@ -2,6 +2,8 @@ package io.github.mmm.binary.codec;
 
 /**
  * Stateful class to {@link Base#encode(byte[]) encode}.
+ * 
+ * @since 1.0.0
  */
 abstract class Encoder {
 
