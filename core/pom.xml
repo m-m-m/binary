@@ -4,24 +4,11 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.github.m-m-m</groupId>
-    <artifactId>mmm</artifactId>
-    <version>5</version>
-    <relativePath>../parent/pom.xml</relativePath>
+    <artifactId>mmm-binary-parent</artifactId>
+    <version>${revision}${changelist}</version>
   </parent>
-  <artifactId>mmm-binary-parent</artifactId>
-  <version>${revision}${changelist}</version>
-  <packaging>pom</packaging>
+  <artifactId>mmm-binary</artifactId>
+  <packaging>jar</packaging>
   <name>${project.artifactId}</name>
   <description>Small and self-contained module to represent and encode binary data.</description>
-
-  <properties>
-    <revision>1.0.0</revision>
-    <changelist>-SNAPSHOT</changelist>
-    <mmm.repository>binary</mmm.repository>
-  </properties>
-  
-  <modules>
-    <module>core</module>
-  </modules>
-
 </project>
