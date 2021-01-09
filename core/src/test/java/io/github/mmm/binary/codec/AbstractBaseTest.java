@@ -7,8 +7,6 @@ import java.security.SecureRandom;
 import org.assertj.core.api.Assertions;
 
 import io.github.mmm.binary.BinaryType;
-import io.github.mmm.binary.codec.Base;
-import io.github.mmm.binary.codec.BinaryCodec;
 
 /**
  * Abstract base class for tests of {@link Base}.
