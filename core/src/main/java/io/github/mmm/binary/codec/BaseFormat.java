@@ -1,3 +1,5 @@
+/* Copyright (c) The m-m-m Team, Licensed under the Apache License, Version 2.0
+ * http://www.apache.org/licenses/LICENSE-2.0 */
 package io.github.mmm.binary.codec;
 
 import java.util.Objects;
@@ -170,7 +172,8 @@ public class BaseFormat {
 
     Objects.requireNonNull(newline, "newline");
     if (!newline.trim().isEmpty()) {
-      throw new IllegalArgumentException("Illegal newline '" + newline + "' - shall only contain whitespace characters.");
+      throw new IllegalArgumentException(
+          "Illegal newline '" + newline + "' - shall only contain whitespace characters.");
     }
     return new BaseFormat(newline, charsPerLine, true, null);
   }

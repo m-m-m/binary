@@ -1,3 +1,5 @@
+/* Copyright (c) The m-m-m Team, Licensed under the Apache License, Version 2.0
+ * http://www.apache.org/licenses/LICENSE-2.0 */
 package io.github.mmm.binary.codec;
 
 import java.util.Arrays;
@@ -137,7 +139,8 @@ class DecoderPowerOfTwo extends Decoder {
       int remain = this.config.bitConfig.getBytes2Decode(charsInChunk);
       if (this.format.isFailOnMissingPadding()) {
         if ((remain + paddingCount) != charsPerChunk) {
-          throw new IllegalArgumentException("Invalid padding " + paddingCount + " as " + (charsPerChunk - remain) + " was expected!");
+          throw new IllegalArgumentException(
+              "Invalid padding " + paddingCount + " as " + (charsPerChunk - remain) + " was expected!");
         }
       }
       if (bytesPerChunk == 5) {

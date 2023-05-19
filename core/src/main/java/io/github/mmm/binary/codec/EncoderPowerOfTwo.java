@@ -1,3 +1,5 @@
+/* Copyright (c) The m-m-m Team, Licensed under the Apache License, Version 2.0
+ * http://www.apache.org/licenses/LICENSE-2.0 */
 package io.github.mmm.binary.codec;
 
 /**
@@ -96,7 +98,8 @@ class EncoderPowerOfTwo extends Encoder {
             bits <<= this.config.bitConfig.getShift4Encode(paddingModulo);
             chunkOffset = this.config.bitConfig.getChunkChars4Encode(paddingModulo) - 1;
           } else {
-            bits = ((this.input[inputIndex++] & 0xff) << 16) | ((this.input[inputIndex++] & 0xff) << 8) | (this.input[inputIndex++] & 0xff);
+            bits = ((this.input[inputIndex++] & 0xff) << 16) | ((this.input[inputIndex++] & 0xff) << 8)
+                | (this.input[inputIndex++] & 0xff);
           }
           break;
         case 5:

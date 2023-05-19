@@ -1,3 +1,5 @@
+/* Copyright (c) The m-m-m Team, Licensed under the Apache License, Version 2.0
+ * http://www.apache.org/licenses/LICENSE-2.0 */
 package io.github.mmm.binary.codec;
 
 import io.github.mmm.binary.Binary;
@@ -108,11 +110,13 @@ public interface BinaryCodec {
 
     byte[] data = decode(encodedData);
     if (data.length == 8) {
-      return ((((long) data[0]) << 56) | (((long) data[1] & 0xff) << 48) | (((long) data[2] & 0xff) << 40) | (((long) data[3] & 0xff) << 32)
-          | (((long) data[4] & 0xff) << 24) | (((long) data[5] & 0xff) << 16) | (((long) data[6] & 0xff) << 8) | (((long) data[7] & 0xff)));
+      return ((((long) data[0]) << 56) | (((long) data[1] & 0xff) << 48) | (((long) data[2] & 0xff) << 40)
+          | (((long) data[3] & 0xff) << 32) | (((long) data[4] & 0xff) << 24) | (((long) data[5] & 0xff) << 16)
+          | (((long) data[6] & 0xff) << 8) | (((long) data[7] & 0xff)));
     } else if (data.length == 7) {
       return ((((long) data[0] & 0xff) << 48) | (((long) data[1] & 0xff) << 40) | (((long) data[2] & 0xff) << 32)
-          | (((long) data[3] & 0xff) << 24) | (((long) data[4] & 0xff) << 16) | (((long) data[5] & 0xff) << 8) | (((long) data[6] & 0xff)));
+          | (((long) data[3] & 0xff) << 24) | (((long) data[4] & 0xff) << 16) | (((long) data[5] & 0xff) << 8)
+          | (((long) data[6] & 0xff)));
     } else if (data.length == 6) {
       return ((((long) data[0] & 0xff) << 40) | (((long) data[1] & 0xff) << 32) | (((long) data[2] & 0xff) << 24)
           | (((long) data[3] & 0xff) << 16) | (((long) data[4] & 0xff) << 8) | (((long) data[5] & 0xff)));
