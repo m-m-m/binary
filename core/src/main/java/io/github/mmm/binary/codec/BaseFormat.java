@@ -14,8 +14,6 @@ public class BaseFormat {
 
   private static final String CRLF = "\r\n";
 
-  private static final char NUL = '\0';
-
   static final BaseFormat DEFAULT = new BaseFormat(null, 0, false, null);
 
   static final BaseFormat MIME = new BaseFormat(CRLF, 76, false, null);
@@ -47,8 +45,8 @@ public class BaseFormat {
   protected BaseFormat(String newline, int charsPerLine, boolean failOnWhitespace, Boolean padding) {
 
     super();
-    char nl1 = NUL;
-    char nl2 = NUL;
+    char nl1 = BaseGeneric.NUL;
+    char nl2 = BaseGeneric.NUL;
     if (newline == null) {
       assert (charsPerLine == 0);
       this.newline = null;
