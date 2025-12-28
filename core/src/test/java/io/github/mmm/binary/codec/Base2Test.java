@@ -11,10 +11,10 @@ public class Base2Test extends AbstractBaseTest {
   @Test
   public void testDefault() {
 
-    // given
+    // arrange
     Base2 base2 = Base2.DEFAULT;
 
-    // when+then
+    // act + assert
     assertThat(base2.encodeShort((short) 0b0111111111111111)).isEqualTo("0111111111111111");
     assertThat(base2.decodeShort("0111111111111111")).isEqualTo((short) 0b0111111111111111);
     assertThat(base2.encodeShort((short) 0b1000000000000000)).isEqualTo("1000000000000000");

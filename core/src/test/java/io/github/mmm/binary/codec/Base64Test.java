@@ -11,10 +11,10 @@ public class Base64Test extends AbstractBaseTest {
   @Test
   public void testDefault() {
 
-    // given
+    // arrange
     Base64 base64 = Base64.DEFAULT;
 
-    // when+then
+    // act + assert
     // https://en.wikipedia.org/wiki/Base64#Examples
     checkText(base64,
         "Man is distinguished, not only by his reason, but by this singular passion from other animals, " + //
@@ -37,10 +37,10 @@ public class Base64Test extends AbstractBaseTest {
   @Test
   public void testUrl() {
 
-    // given
+    // arrange
     Base64 base64 = Base64.URL;
 
-    // when+then
+    // act + assert
     byte[] data = new byte[] { 3, -32, 127 };
     String data64 = "A-B_";
     assertThat(base64.encode(data)).isEqualTo(data64);

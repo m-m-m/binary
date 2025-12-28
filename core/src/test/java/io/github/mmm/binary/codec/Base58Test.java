@@ -11,10 +11,10 @@ public class Base58Test extends AbstractBaseTest {
   @Test
   public void testDefault() {
 
-    // given
+    // arrange
     Base58 base58 = Base58.DEFAULT;
 
-    // when+then
+    // act + assert
     checkHex(base58, "000111d38e5fc9071ffcd20b4a763cc9ae4f252bb4e48fd66a835e252ada93ff480d6dd43dc62a641155a5",
         base58.getAlphabet());
     checkHex(base58, "00000000", "1111");
@@ -27,10 +27,10 @@ public class Base58Test extends AbstractBaseTest {
   @Test
   public void testUrl() {
 
-    // given
+    // arrange
     Base58 base58 = Base58.URL;
 
-    // when+then
+    // act + assert
     // https://github.com/stephen-hill/base58php
     checkText(base58, "Hello World", "iXf12sRWto45bmC");
     checkHex(base58, "000111d38e5fc9071ffcd20b4a763cc9ae4f252bb4e48fd66a835e252ada93ff480d6dd43dc62a641155a5",

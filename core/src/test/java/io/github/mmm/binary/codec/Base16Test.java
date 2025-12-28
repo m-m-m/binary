@@ -11,10 +11,10 @@ public class Base16Test extends AbstractBaseTest {
   @Test
   public void testDefault() {
 
-    // given
+    // arrange
     Base16 base16 = Base16.DEFAULT;
 
-    // when+then
+    // act + assert
     assertThat(base16.encodeShort((short) 0x7f80)).isEqualTo("7f80");
     assertThat(base16.decodeShort("7f80")).isEqualTo((short) 0x7f80);
     assertThat(base16.decodeShort("ACEF")).isEqualTo((short) 0xacef);

@@ -11,10 +11,10 @@ public class Base8Test extends AbstractBaseTest {
   @Test
   public void testDefault() {
 
-    // given
+    // arrange
     Base8 base8 = Base8.DEFAULT;
 
-    // when+then
+    // act + assert
     check(base8, new byte[] { -1 }, "776=====");
     checkText(base8, "Hello World!", /**/ "22062554330674402566756233062041");
     checkText(base8, "Hello World", /* */ "220625543306744025667562330620==");
