@@ -11,7 +11,7 @@ import io.github.mmm.binary.BinaryType;
 /**
  * Abstract base class for tests of {@link Base}.
  */
-public class AbstractBaseTest extends Assertions {
+class AbstractBaseTest extends Assertions {
 
   void check(BinaryCodec codec) {
 

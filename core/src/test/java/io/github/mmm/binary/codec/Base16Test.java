@@ -9,7 +9,7 @@ public class Base16Test extends AbstractBaseTest {
 
   /** Test of {@link Base16#DEFAULT}. */
   @Test
-  public void testDefault() {
+  void testDefault() {
 
     // arrange
     Base16 base16 = Base16.DEFAULT;

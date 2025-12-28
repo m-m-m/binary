@@ -9,7 +9,7 @@ public class Base32Test extends AbstractBaseTest {
 
   /** Test of {@link Base32#DEFAULT}. */
   @Test
-  public void testDefault() {
+  void testDefault() {
 
     Base32 base32 = Base32.DEFAULT;
     checkText(base32, "Hello World!", /**/ "JBSWY3DPEBLW64TMMQQQ====");

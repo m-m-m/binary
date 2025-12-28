@@ -9,7 +9,7 @@ public class Base58Test extends AbstractBaseTest {
 
   /** Test of {@link Base58#DEFAULT}. */
   @Test
-  public void testDefault() {
+  void testDefault() {
 
     // arrange
     Base58 base58 = Base58.DEFAULT;
@@ -25,7 +25,7 @@ public class Base58Test extends AbstractBaseTest {
 
   /** Test of {@link Base58#URL}. */
   @Test
-  public void testUrl() {
+  void testUrl() {
 
     // arrange
     Base58 base58 = Base58.URL;

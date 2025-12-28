@@ -9,7 +9,7 @@ public class Base64Test extends AbstractBaseTest {
 
   /** Test of {@link Base64#DEFAULT}. */
   @Test
-  public void testDefault() {
+  void testDefault() {
 
     // arrange
     Base64 base64 = Base64.DEFAULT;
@@ -35,7 +35,7 @@ public class Base64Test extends AbstractBaseTest {
 
   /** Test of {@link Base64#URL}. */
   @Test
-  public void testUrl() {
+  void testUrl() {
 
     // arrange
     Base64 base64 = Base64.URL;
@@ -50,7 +50,7 @@ public class Base64Test extends AbstractBaseTest {
 
   /** Test of {@link Base64#DEFAULT} with mime encoding. */
   @Test
-  public void testMime() {
+  void testMime() {
 
     BinaryCodec codec = Base64.DEFAULT.withFormat(BaseFormat.ofMime());
     checkText(codec, "Man is distinguished, not only by his reason, but by this singular passion from other animals, " + //
