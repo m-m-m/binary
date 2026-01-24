@@ -165,6 +165,13 @@ class BinaryTypeTest extends Assertions {
     blob.getData(buffer, 0);
     assertThat(buffer).isEqualTo(SAMPLE_BLOB_DATA);
     assertThat(blob.getLength()).isEqualTo(8);
+    assertThat(buffer).isEqualTo(SAMPLE_BLOB_DATA);
+    buffer = new byte[SAMPLE_BLOB_DATA.length];
+    for (int i = 0; i < buffer.length; i++) {
+      buffer[i] = (byte) (i + 97);
+    }
+    blob.getData(1, buffer, 2, 3);
+    assertThat(new String(buffer)).isEqualTo("ab#Egfgh");
   }
 
   private static class Blob extends BinaryType {

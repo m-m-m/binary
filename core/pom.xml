@@ -11,4 +11,15 @@
   <packaging>jar</packaging>
   <name>${project.artifactId}</name>
   <description>Small and self-contained module to represent and encode binary data.</description>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>mmm-base-parent</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>  
+  </dependencyManagement>
 </project>

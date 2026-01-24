@@ -92,15 +92,17 @@ public class BinaryType implements Binary {
   }
 
   @Override
-  public void getData(byte[] buffer, int offset) {
+  public void getData(int binaryOffset, byte[] buffer, int bufferOffset, int length) {
 
-    assert (this.data.length + offset <= buffer.length);
-    System.arraycopy(this.data, 0, buffer, offset, this.data.length);
+    if (length > this.data.length) {
+      throw new IllegalArgumentException(length + ">" + this.data.length);
+    }
+    if (bufferOffset + length > buffer.length) {
+      throw new IllegalArgumentException(bufferOffset + "+" + length + ">" + buffer.length);
+    }
+    System.arraycopy(this.data, binaryOffset, buffer, bufferOffset, length);
   }
 
-  /**
-   * @return the length of this BLOB in bytes (array length of {@link #getData()}).
-   */
   @Override
   public int getLength() {
 

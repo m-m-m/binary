@@ -10,11 +10,11 @@ import java.nio.file.Path;
 import java.util.Objects;
 
 /**
- * Implementation of {@link Streamable} for {@link Path}.
+ * Implementation of {@link Streamable} for a file {@link Path}.
  *
  * @since 1.0.0
  */
-public class StreamablePath implements Streamable {
+public class StreamableFile implements Streamable {
 
   private final Path file;
 
@@ -23,7 +23,7 @@ public class StreamablePath implements Streamable {
    *
    * @param file the file to adapt.
    */
-  public StreamablePath(Path file) {
+  public StreamableFile(Path file) {
 
     super();
     Objects.requireNonNull(file, "file");
@@ -54,6 +54,19 @@ public class StreamablePath implements Streamable {
 
     try {
       return Files.newInputStream(this.file);
+    } catch (IOException e) {
+      throw new IllegalStateException(e);
+    }
+  }
+
+  @Override
+  public long getSize() {
+
+    if (!Files.exists(this.file) || Files.isDirectory(this.file)) {
+      return 0;
+    }
+    try {
+      return Files.size(this.file);
     } catch (IOException e) {
       throw new IllegalStateException(e);
     }

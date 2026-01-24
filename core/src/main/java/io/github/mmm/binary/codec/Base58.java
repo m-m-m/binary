@@ -8,9 +8,9 @@ package io.github.mmm.binary.codec;
  * efficient as with e.g. {@link Base64}. Therefore, it should not be used for very large binary data but is fine for
  * hashes, IDs, etc. {@link Base58} is typically a good compromise of usability and storage-efficiency:
  * <ul>
- * <li>like {@link Base32} it typically uses alphabets that only contain Latin letters and digits and can also avoid
- * similar characters (like '1' and 'l' as well as 'O' and '0'). Therefore encoded representations can be selected with
- * a simple double-click and if you have to manually read and type them there are no ambiguous or very similar looking
+ * <li>like {@link Base32} it uses alphabets that only contain Latin letters and digits and can also avoid similar
+ * characters (like '1' and 'l' as well as 'O' and '0'). Therefore encoded representations can be selected with a simple
+ * double-click and if you have to manually read and type them, there are no ambiguous or very similar looking
  * characters.</li>
  * <li>its overhead in length of the encoded representation compared to the original binary data is better than
  * {@link Base32} (that also has the above benefits) but only a little worse than {@link Base64}.</li>

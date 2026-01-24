@@ -67,4 +67,14 @@ public class StreamableBlob implements Streamable {
     }
   }
 
+  @Override
+  public long getSize() {
+
+    try {
+      return this.blob.length();
+    } catch (SQLException e) {
+      throw new IllegalStateException(e);
+    }
+  }
+
 }

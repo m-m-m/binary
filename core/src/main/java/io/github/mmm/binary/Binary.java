@@ -38,16 +38,36 @@ public interface Binary extends Streamable {
   /**
    * Copies the {@link #getData() data} into the given buffer.
    *
-   * @param buffer the byte array to copy the data to. Has to have enough capacity left for the {@link #getLength()
-   *        length} of this BLOB.
-   * @param offset the index where to start copying to {@code buffer}.
+   * @param buffer the byte array to copy the data to. Has to have enough capacity.
+   * @param bufferOffset the index where to start copying to {@code buffer}.
    */
-  void getData(byte[] buffer, int offset);
+  default void getData(byte[] buffer, int bufferOffset) {
+
+    getData(0, buffer, bufferOffset, getLength());
+  }
+
+  /**
+   * Copies a chunk of the {@link #getData() data} into the given buffer.
+   *
+   * @param binaryOffset the index where to start copying from this {@link Binary}.
+   * @param buffer the byte array to copy the data to. Has to have enough capacity.
+   * @param bufferOffset the index where to start copying to {@code buffer}.
+   * @param length the number of bytes to copy. Should not exceed the {@link #getLength() length} of this {@link Binary}
+   *        or the given {@code buffer} (satisfy {@code offset + length < buffer.length}).
+   */
+  void getData(int binaryOffset, byte[] buffer, int bufferOffset, int length);
 
   /**
    * @return the length of this BLOB in bytes (array length of {@link #getData()}).
+   * @see #getSize()
    */
   int getLength();
+
+  @Override
+  default long getSize() {
+
+    return getLength();
+  }
 
   /**
    * This method avoids an {@link System#arraycopy(Object, int, Object, int, int) array-copy} of {@link #getData()} and

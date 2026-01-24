@@ -22,4 +22,9 @@ public interface Streamable {
    */
   InputStream asStream();
 
+  /**
+   * @return the size of this BLOB in bytes.
+   */
+  long getSize();
+
 }
