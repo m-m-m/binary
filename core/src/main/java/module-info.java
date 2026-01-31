@@ -7,6 +7,8 @@
  */
 module io.github.mmm.binary {
 
+  requires transitive io.github.mmm.base;
+
   requires static java.sql;
 
   exports io.github.mmm.binary;

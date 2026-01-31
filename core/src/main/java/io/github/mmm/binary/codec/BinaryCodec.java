@@ -2,6 +2,7 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package io.github.mmm.binary.codec;
 
+import io.github.mmm.base.number.NumberCodec;
 import io.github.mmm.binary.Binary;
 
 /**
@@ -75,10 +76,8 @@ public interface BinaryCodec {
   default short decodeShort(String encodedData) {
 
     byte[] data = decode(encodedData);
-    if (data.length == 2) {
-      return (short) (((data[0] & 0xff) << 8) | (data[1] & 0xff));
-    } else if (data.length == 1) {
-      return data[0];
+    if ((data.length == 1) || (data.length == 2)) {
+      return (short) NumberCodec.readU2(data, 0, true);
     }
     throw new IllegalArgumentException("Decoded data has invalid length " + data.length);
   }
@@ -90,14 +89,8 @@ public interface BinaryCodec {
   default int decodeInt(String encodedData) {
 
     byte[] data = decode(encodedData);
-    if (data.length == 4) {
-      return (((data[0] & 0xff) << 24) | ((data[1] & 0xff) << 16) | ((data[2] & 0xff) << 8) | ((data[3] & 0xff)));
-    } else if (data.length == 3) {
-      return (((data[0] & 0xff) << 16) | ((data[1] & 0xff) << 8) | ((data[2] & 0xff)));
-    } else if (data.length == 2) {
-      return (((data[0] & 0xff) << 8) | ((data[1] & 0xff)));
-    } else if (data.length == 1) {
-      return data[0];
+    if ((data.length > 0) && (data.length <= 4)) {
+      return NumberCodec.readU4(data, 0, true);
     }
     throw new IllegalArgumentException("Decoded data has invalid length " + data.length);
   }
@@ -109,29 +102,8 @@ public interface BinaryCodec {
   default long decodeLong(String encodedData) {
 
     byte[] data = decode(encodedData);
-    if (data.length == 8) {
-      return ((((long) data[0]) << 56) | (((long) data[1] & 0xff) << 48) | (((long) data[2] & 0xff) << 40)
-          | (((long) data[3] & 0xff) << 32) | (((long) data[4] & 0xff) << 24) | (((long) data[5] & 0xff) << 16)
-          | (((long) data[6] & 0xff) << 8) | (((long) data[7] & 0xff)));
-    } else if (data.length == 7) {
-      return ((((long) data[0] & 0xff) << 48) | (((long) data[1] & 0xff) << 40) | (((long) data[2] & 0xff) << 32)
-          | (((long) data[3] & 0xff) << 24) | (((long) data[4] & 0xff) << 16) | (((long) data[5] & 0xff) << 8)
-          | (((long) data[6] & 0xff)));
-    } else if (data.length == 6) {
-      return ((((long) data[0] & 0xff) << 40) | (((long) data[1] & 0xff) << 32) | (((long) data[2] & 0xff) << 24)
-          | (((long) data[3] & 0xff) << 16) | (((long) data[4] & 0xff) << 8) | (((long) data[5] & 0xff)));
-    } else if (data.length == 5) {
-      return ((((long) data[0] & 0xff) << 32) | (((long) data[1] & 0xff) << 24) | (((long) data[2] & 0xff) << 16)
-          | (((long) data[3] & 0xff) << 8) | (((long) data[4] & 0xff)));
-    } else if (data.length == 4) {
-      return ((((long) data[0] & 0xff) << 24) | (((long) data[1] & 0xff) << 16) | (((long) data[2] & 0xff) << 8)
-          | (((long) data[3] & 0xff)));
-    } else if (data.length == 3) {
-      return ((((long) data[0] & 0xff) << 16) | (((long) data[1] & 0xff) << 8) | (((long) data[2] & 0xff)));
-    } else if (data.length == 2) {
-      return ((((long) data[0] & 0xff) << 8) | (((long) data[1] & 0xff)));
-    } else if (data.length == 1) {
-      return data[0];
+    if ((data.length > 0) && (data.length <= 8)) {
+      return NumberCodec.readU8(data, 0, true);
     }
     throw new IllegalArgumentException("Decoded data has invalid length " + data.length);
   }

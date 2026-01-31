@@ -9,8 +9,6 @@ module io.github.mmm.binary.store {
 
   requires transitive io.github.mmm.binary;
 
-  requires transitive io.github.mmm.base;
-
   requires org.slf4j;
 
   exports io.github.mmm.binary.store;
