@@ -10,8 +10,8 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import io.github.mmm.binary.Streamable;
-import io.github.mmm.binary.StreamableFile;
+import io.github.mmm.binary.BinaryStream;
+import io.github.mmm.binary.FileAsBinaryStream;
 
 /**
  * Abstract base implementation of {@link BlobStore}.
@@ -192,11 +192,11 @@ public class AbstractBlobStore implements BlobStore {
   }
 
   @Override
-  public Streamable load(String id) {
+  public BinaryStream load(String id) {
 
     Path file = getFilePath(id);
     if ((file != null) && Files.exists(file)) {
-      return new StreamableFile(file);
+      return new FileAsBinaryStream(file);
     }
     return null;
   }

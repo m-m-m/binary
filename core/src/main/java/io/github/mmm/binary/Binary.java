@@ -14,7 +14,7 @@ import io.github.mmm.binary.codec.BinaryCodec;
  *
  * @since 1.0.0
  */
-public interface Binary extends Streamable {
+public interface Binary extends BinaryStream {
 
   /** An empty byte array (no data). */
   byte[] EMPTY_BYTE_ARRAY = new byte[0];

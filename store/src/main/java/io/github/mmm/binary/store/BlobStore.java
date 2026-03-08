@@ -2,10 +2,10 @@ package io.github.mmm.binary.store;
 
 import java.io.InputStream;
 
-import io.github.mmm.binary.Streamable;
+import io.github.mmm.binary.BinaryStream;
 
 /**
- * Interface for a simple {@link Streamable BLOB} store.
+ * Interface for a simple {@link BinaryStream BLOB} store.
  */
 public interface BlobStore {
 
@@ -24,9 +24,9 @@ public interface BlobStore {
 
   /**
    * @param id the {@link #save(InputStream) unique ID} of the requested BLOB.
-   * @return the {@link Streamable} or {@code null} if no such BLOB exists in this store.
+   * @return the {@link BinaryStream} or {@code null} if no such BLOB exists in this store.
    */
-  Streamable load(String id);
+  BinaryStream load(String id);
 
   /**
    * Deletes the binary with the given {@code id}.

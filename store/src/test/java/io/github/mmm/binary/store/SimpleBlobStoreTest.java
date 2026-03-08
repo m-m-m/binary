@@ -5,7 +5,7 @@ import java.nio.file.Path;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
-import io.github.mmm.binary.Streamable;
+import io.github.mmm.binary.BinaryStream;
 
 /**
  * Test of {@link SimpleBlobStore}.
@@ -24,11 +24,11 @@ class SimpleBlobStoreTest extends BaseBlobStoreTest {
     BlobId id2 = store.save(blob(TEST_DATA1));
     assertThat(id2.isDuplicate()).isFalse();
 
-    Streamable blob1 = store.load(id1.getId());
+    BinaryStream blob1 = store.load(id1.getId());
     assertThat(blob1.getSize()).isEqualTo(TEST_DATA1.length());
     verifyBlob(blob1, TEST_DATA1);
 
-    Streamable blob2 = store.load(id2.getId());
+    BinaryStream blob2 = store.load(id2.getId());
     assertThat(blob2.getSize()).isEqualTo(TEST_DATA1.length());
     verifyBlob(blob2, TEST_DATA1);
 

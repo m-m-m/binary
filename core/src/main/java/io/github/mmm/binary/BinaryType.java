@@ -127,7 +127,7 @@ public class BinaryType implements Binary {
   }
 
   @Override
-  public InputStream asStream() {
+  public InputStream openStream() {
 
     return new ByteArrayInputStream(this.data);
   }

@@ -5,7 +5,7 @@ import java.nio.file.Path;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
-import io.github.mmm.binary.Streamable;
+import io.github.mmm.binary.BinaryStream;
 
 /**
  * Test of {@link HashDeduplicatingBlobStore}.
@@ -28,11 +28,11 @@ class HashDeduplicatingBlobStoreTest extends BaseBlobStoreTest {
     assertThat(id3.isDuplicate()).isTrue();
     assertThat(id3.getId()).isEqualTo(id1.getId());
 
-    Streamable blob1 = store.load(id1.getId());
+    BinaryStream blob1 = store.load(id1.getId());
     assertThat(blob1.getSize()).isEqualTo(TEST_DATA1.length());
     verifyBlob(blob1, TEST_DATA1);
 
-    Streamable blob2 = store.load(id2.getId());
+    BinaryStream blob2 = store.load(id2.getId());
     verifyBlob(blob2, TEST_DATA2);
 
     boolean deleted1 = store.delete(id1.getId());

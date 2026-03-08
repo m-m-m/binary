@@ -6,7 +6,7 @@ import java.io.InputStream;
 
 import org.assertj.core.api.Assertions;
 
-import io.github.mmm.binary.Streamable;
+import io.github.mmm.binary.BinaryStream;
 
 /**
  * Abstract base class to test {@link BlobStore}.
@@ -22,10 +22,10 @@ abstract class BaseBlobStoreTest extends Assertions {
     return new ByteArrayInputStream(data.getBytes());
   }
 
-  void verifyBlob(Streamable blob, String data) {
+  void verifyBlob(BinaryStream blob, String data) {
 
     try {
-      byte[] bytes = blob.asStream().readAllBytes();
+      byte[] bytes = blob.openStream().readAllBytes();
       assertThat(bytes).isEqualTo(data.getBytes());
     } catch (IOException e) {
       throw new IllegalStateException(e);
