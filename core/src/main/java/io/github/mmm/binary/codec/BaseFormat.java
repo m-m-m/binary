@@ -4,12 +4,10 @@ package io.github.mmm.binary.codec;
 
 import java.util.Objects;
 
-/**
- * Format for {@link Base}.
- *
- * @since 1.0.0
- * @see Base#withFormat(BaseFormat)
- */
+/// Format for [Base].
+///
+/// @since 1.0.0
+/// @see Base#withFormat(BaseFormat)
 public class BaseFormat {
 
   private static final String CRLF = "\r\n";
@@ -34,14 +32,12 @@ public class BaseFormat {
 
   private final int newlineLength;
 
-  /**
-   * The constructor.
-   *
-   * @param newline - see {@link #getNewline()}.
-   * @param charsPerLine - see {@link #getCharsPerLine()}.
-   * @param failOnWhitespace - see {@link #isFailOnMissingPadding()}
-   * @param padding - see {@link #isFailOnMissingPadding()} and {@link #isOmitPadding()}.
-   */
+  /// The constructor.
+  ///
+  /// @param newline - see [#getNewline()].
+  /// @param charsPerLine - see [#getCharsPerLine()].
+  /// @param failOnWhitespace - see [#isFailOnMissingPadding()]
+  /// @param padding - see [#isFailOnMissingPadding()] and [#isOmitPadding()].
   protected BaseFormat(String newline, int charsPerLine, boolean failOnWhitespace, Boolean padding) {
 
     super();
@@ -73,54 +69,42 @@ public class BaseFormat {
     this.padding = padding;
   }
 
-  /**
-   * @return newline the newline sequence (e.g. "\r\n") or {@code null} for none (encoded {@link String} is a single
-   *         line).
-   */
+  /// @return newline the newline sequence (e.g. "\r\n") or `null` for none (encoded [String] is a single
+  ///         line).
   public String getNewline() {
 
     return this.newline;
   }
 
-  /**
-   * @return the number of characters until another {@link #getNewline() newline} will be appended. Will be {@code 0} if
-   *         {@link #getNewline() newline} is {@code null}.
-   */
+  /// @return the number of characters until another [newline][#getNewline()] will be appended. Will be `0` if
+  ///         [newline][#getNewline()] is `null`.
   public int getCharsPerLine() {
 
     return this.charsPerLine;
   }
 
-  /**
-   * @return {@code true} to fail on whitespace (' ', '\r', or '\n'), {@code false} to silently ignore whitespaces.
-   */
+  /// @return `true` to fail on whitespace (' ', '\r', or '\n'), `false` to silently ignore whitespaces.
   public boolean isFailOnWhitespace() {
 
     return this.failOnWhitespace;
   }
 
-  /**
-   * @return {@code true} to fail if padding (e.g. on {@link Base64}) is omitted where applicable, {@code false} to
-   *         silently ignore missing padding.
-   */
+  /// @return `true` to fail if padding (e.g. on [Base64]) is omitted where applicable, `false` to
+  ///         silently ignore missing padding.
   public boolean isFailOnMissingPadding() {
 
     return Boolean.TRUE.equals(this.padding);
   }
 
-  /**
-   * @return {@code true} if padding should be omitted, {@code false} otherwise (add padding where applicable).
-   */
+  /// @return `true` if padding should be omitted, `false` otherwise (add padding where applicable).
   public boolean isOmitPadding() {
 
     return Boolean.FALSE.equals(this.padding);
   }
 
-  /**
-   * @param chars the char-array to append the newline to. Has to have a remaining capacity of at least the
-   *        {@link String#length() length} of {@link #getNewline() newline}.
-   * @param index the offset in {@code chars} where to append.
-   */
+  /// @param chars the char-array to append the newline to. Has to have a remaining capacity of at least the
+  ///        [length][String#length()] of [newline][#getNewline()].
+  /// @param index the offset in `chars` where to append.
   void appendNewline(char[] chars, int index) {
 
     if (this.newlineLength > 0) {
@@ -137,35 +121,27 @@ public class BaseFormat {
     }
   }
 
-  /**
-   * @return the default {@link BaseFormat} (tolerant, no {@link #getNewline() newline} on encoding).
-   */
+  /// @return the default [BaseFormat] (tolerant, no [newline][#getNewline()] on encoding).
   public static BaseFormat ofDefault() {
 
     return DEFAULT;
   }
 
-  /**
-   * @return instance of {@link BaseFormat} with MIME compatible {@link #getNewline() newline} settings for encoding.
-   */
+  /// @return instance of [BaseFormat] with MIME compatible [newline][#getNewline()] settings for encoding.
   public static BaseFormat ofMime() {
 
     return MIME;
   }
 
-  /**
-   * @return instance of {@link BaseFormat} with strict decoding and without {@link #getNewline() newlines} on encoding.
-   */
+  /// @return instance of [BaseFormat] with strict decoding and without [newlines][#getNewline()] on encoding.
   public static BaseFormat ofStrict() {
 
     return STRICT;
   }
 
-  /**
-   * @param newline the {@link #getNewline() newline} sequence (e.g. "\n", "\r\n").
-   * @param charsPerLine the number of characters per line until a {@code newline} is appended.
-   * @return instance of {@link BaseFormat} for the given arguments.
-   */
+  /// @param newline the [newline][#getNewline()] sequence (e.g. "\n", "\r\n").
+  /// @param charsPerLine the number of characters per line until a `newline` is appended.
+  /// @return instance of [BaseFormat] for the given arguments.
   public static BaseFormat ofNewline(String newline, int charsPerLine) {
 
     Objects.requireNonNull(newline, "newline");

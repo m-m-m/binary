@@ -12,12 +12,10 @@ import java.util.Objects;
 
 import io.github.mmm.base.exception.ReadOnlyException;
 
-/**
- * Implementation of {@link Blob} that wraps a {@link BinaryStream}.
- *
- * @see #of(BinaryStream)
- * @since 1.0.0
- */
+/// Implementation of [Blob] that wraps a [BinaryStream].
+///
+/// @see #of(BinaryStream)
+/// @since 1.0.0
 @SuppressWarnings("exports")
 public class BlobFromBinaryStream implements Blob {
 
@@ -35,17 +33,13 @@ public class BlobFromBinaryStream implements Blob {
     }
   }
 
-  /**
-   * @return the wrapped {@link BinaryStream}.
-   */
+  /// @return the wrapped [BinaryStream].
   public BinaryStream getStream() {
 
     return this.stream;
   }
 
-  /**
-   * @return writableStream
-   */
+  /// @return writableStream
   public WritableBinaryStream getWritableStream() {
 
     if (this.writableStream == null) {
@@ -140,10 +134,8 @@ public class BlobFromBinaryStream implements Blob {
     return this.stream.openStream(pos);
   }
 
-  /**
-   * @param streamable the {@link BinaryStream} to convert.
-   * @return the given {@link BinaryStream} converted to {@link Blob}.
-   */
+  /// @param streamable the [BinaryStream] to convert.
+  /// @return the given [BinaryStream] converted to [Blob].
   public static Blob of(BinaryStream streamable) {
 
     if (streamable == null) {

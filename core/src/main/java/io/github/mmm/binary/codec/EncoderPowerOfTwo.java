@@ -2,11 +2,9 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package io.github.mmm.binary.codec;
 
-/**
- * Simple {@link Encoder} for alphabet with length 2^x.
- *
- * @since 1.0.0
- */
+/// Simple [Encoder] for alphabet with length 2^x.
+///
+/// @since 1.0.0
 @SuppressWarnings("javadoc")
 class EncoderPowerOfTwo extends Encoder {
 

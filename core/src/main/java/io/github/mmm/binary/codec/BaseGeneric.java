@@ -2,45 +2,37 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package io.github.mmm.binary.codec;
 
-/**
- * Implementation of {@link BinaryCodec} based on {@link #getAlphabet() alphabet} of unique and visible ASCII
- * characters.
- *
- * @since 1.0.0
- */
+/// Implementation of [BinaryCodec] based on [alphabet][#getAlphabet()] of unique and visible ASCII
+/// characters.
+///
+/// @since 1.0.0
 public class BaseGeneric extends Base {
 
   static final char NUL = '\0';
 
   private final CoderConfig config;
 
-  /**
-   * The constructor.
-   *
-   * @param alphabet the {@link #getAlphabet() alphabet}.
-   */
+  /// The constructor.
+  ///
+  /// @param alphabet the [alphabet][#getAlphabet()].
   public BaseGeneric(String alphabet) {
 
     this(alphabet, '=');
   }
 
-  /**
-   * The constructor.
-   *
-   * @param alphabet the {@link #getAlphabet() alphabet}.
-   * @param paddingChar the padding character or {@code -1} for no padding.
-   */
+  /// The constructor.
+  ///
+  /// @param alphabet the [alphabet][#getAlphabet()].
+  /// @param paddingChar the padding character or `-1` for no padding.
   public BaseGeneric(String alphabet, char paddingChar) {
 
     super(alphabet);
     this.config = createConfig(alphabet, paddingChar);
   }
 
-  /**
-   * @param alphabet the {@link #getAlphabet() alphabet}.
-   * @param paddingChar the optional padding character.
-   * @return the CoderConfig instance.
-   */
+  /// @param alphabet the [alphabet][#getAlphabet()].
+  /// @param paddingChar the optional padding character.
+  /// @return the CoderConfig instance.
   protected CoderConfig createConfig(String alphabet, char paddingChar) {
 
     int length = alphabet.length();

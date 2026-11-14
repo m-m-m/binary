@@ -5,9 +5,7 @@ package io.github.mmm.binary;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-/**
- *
- */
+///
 public final class ReadOnlyBinaryStream implements BinaryStream {
 
   private final WritableBinaryStream stream;
@@ -36,10 +34,8 @@ public final class ReadOnlyBinaryStream implements BinaryStream {
     this.stream.save(out);
   }
 
-  /**
-   * @param stream the {@link BinaryStream}.
-   * @return a {@link BinaryStream} guaranteed to be read-only.
-   */
+  /// @param stream the [BinaryStream].
+  /// @return a [BinaryStream] guaranteed to be read-only.
   public static BinaryStream readOnly(BinaryStream stream) {
 
     if (stream instanceof WritableBinaryStream wbs) {

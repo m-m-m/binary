@@ -5,24 +5,18 @@ package io.github.mmm.binary.codec;
 import io.github.mmm.base.number.NumberCodec;
 import io.github.mmm.binary.Binary;
 
-/**
- * Interface for a coded that can {@link #encode(byte[]) encode} {@link Binary binary data} to a {@link String} and
- * {@link #decode(String) decode} it back.
- *
- * @since 7.6.1
- */
+/// Interface for a coded that can [encode][#encode(byte[])] [binary data][Binary] to a [String] and
+/// [decode][#decode(String)] it back.
+///
+/// @since 7.6.1
 public interface BinaryCodec {
 
-  /**
-   * @param data the binary data to encode.
-   * @return the given {@code data} encoded as {@link String}.
-   */
+  /// @param data the binary data to encode.
+  /// @return the given `data` encoded as [String].
   String encode(byte[] data);
 
-  /**
-   * @param value the short value to encode.
-   * @return the given {@code value} encoded as {@link String} using BigEndian.
-   */
+  /// @param value the short value to encode.
+  /// @return the given `value` encoded as [String] using BigEndian.
   default String encodeShort(short value) {
 
     byte[] data = new byte[2];
@@ -31,10 +25,8 @@ public interface BinaryCodec {
     return encode(data);
   }
 
-  /**
-   * @param value the int value to encode.
-   * @return the given {@code value} encoded as {@link String} using BigEndian.
-   */
+  /// @param value the int value to encode.
+  /// @return the given `value` encoded as [String] using BigEndian.
   default String encodeInt(int value) {
 
     byte[] data = new byte[4];
@@ -45,10 +37,8 @@ public interface BinaryCodec {
     return encode(data);
   }
 
-  /**
-   * @param value the long value to encode.
-   * @return the given {@code value} encoded as {@link String} using BigEndian.
-   */
+  /// @param value the long value to encode.
+  /// @return the given `value` encoded as [String] using BigEndian.
   default String encodeLong(long value) {
 
     byte[] data = new byte[8];
@@ -63,16 +53,12 @@ public interface BinaryCodec {
     return encode(data);
   }
 
-  /**
-   * @param encodedData the {@link #encode(byte[]) encoded} {@link String}.
-   * @return the decoded data as {@code byte} array.
-   */
+  /// @param encodedData the [encoded][#encode(byte[])] [String].
+  /// @return the decoded data as `byte` array.
   byte[] decode(String encodedData);
 
-  /**
-   * @param encodedData the {@link #encodeShort(short) encoded} {@link String}.
-   * @return the decoded value.
-   */
+  /// @param encodedData the [encoded][#encodeShort(short)] [String].
+  /// @return the decoded value.
   default short decodeShort(String encodedData) {
 
     byte[] data = decode(encodedData);
@@ -82,10 +68,8 @@ public interface BinaryCodec {
     throw new IllegalArgumentException("Decoded data has invalid length " + data.length);
   }
 
-  /**
-   * @param encodedData the {@link #encodeInt(int) encoded} {@link String}.
-   * @return the decoded value.
-   */
+  /// @param encodedData the [encoded][#encodeInt(int)] [String].
+  /// @return the decoded value.
   default int decodeInt(String encodedData) {
 
     byte[] data = decode(encodedData);
@@ -95,10 +79,8 @@ public interface BinaryCodec {
     throw new IllegalArgumentException("Decoded data has invalid length " + data.length);
   }
 
-  /**
-   * @param encodedData the {@link #encodeLong(long) encoded} {@link String}.
-   * @return the decoded value.
-   */
+  /// @param encodedData the [encoded][#encodeLong(long)] [String].
+  /// @return the decoded value.
   default long decodeLong(String encodedData) {
 
     byte[] data = decode(encodedData);

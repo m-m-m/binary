@@ -2,11 +2,9 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package io.github.mmm.binary.codec;
 
-/**
- * Div-mod {@link Encoder} for alphabet with length other than 2^x.
- *
- * @since 1.0.0
- */
+/// Div-mod [Encoder] for alphabet with length other than 2^x.
+///
+/// @since 1.0.0
 @SuppressWarnings("javadoc")
 class EncoderDivMod extends Encoder {
 

@@ -2,23 +2,19 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package io.github.mmm.binary.codec;
 
-/**
- * {@link CoderConfig} for alphabet with length 2^x.
- *
- * @since 1.0.0
- */
+/// [CoderConfig] for alphabet with length 2^x.
+///
+/// @since 1.0.0
 @SuppressWarnings("javadoc")
 class CoderConfigPowerOfTwo extends CoderConfigMapped {
 
   final BitConfig bitConfig;
 
-  /**
-   * The constructor.
-   *
-   * @param alphabet the {@link Base#getAlphabet() alphabet}.
-   * @param bitConfig the {@link BitConfig}.
-   * @param padding the padding character.
-   */
+  /// The constructor.
+  ///
+  /// @param alphabet the [alphabet][Base#getAlphabet()].
+  /// @param bitConfig the [BitConfig].
+  /// @param padding the padding character.
   public CoderConfigPowerOfTwo(String alphabet, BitConfig bitConfig, char padding) {
 
     super(alphabet, padding);

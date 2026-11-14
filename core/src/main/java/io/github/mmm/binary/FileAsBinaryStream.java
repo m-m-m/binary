@@ -12,20 +12,16 @@ import java.util.Objects;
 
 import io.github.mmm.base.exception.RuntimeIoException;
 
-/**
- * Implementation of {@link BinaryStream} for a file {@link Path}.
- *
- * @since 1.0.0
- */
+/// Implementation of [BinaryStream] for a file [Path].
+///
+/// @since 1.0.0
 public class FileAsBinaryStream implements WritableBinaryStream {
 
   private final Path file;
 
-  /**
-   * The constructor.
-   *
-   * @param file the file to adapt.
-   */
+  /// The constructor.
+  ///
+  /// @param file the file to adapt.
   public FileAsBinaryStream(Path file) {
 
     super();
@@ -34,9 +30,7 @@ public class FileAsBinaryStream implements WritableBinaryStream {
     this.file = file;
   }
 
-  /**
-   * @return the wrapped {@link Path}.
-   */
+  /// @return the wrapped [Path].
   public Path getFile() {
 
     return this.file;

@@ -4,11 +4,9 @@ package io.github.mmm.binary.codec;
 
 import java.util.Arrays;
 
-/**
- * {@link CoderConfigBase} with reverse map of alphabet.
- *
- * @since 1.0.0
- */
+/// [CoderConfigBase] with reverse map of alphabet.
+///
+/// @since 1.0.0
 abstract class CoderConfigMapped extends CoderConfig {
 
   static final int PAD = -2;
@@ -34,12 +32,10 @@ abstract class CoderConfigMapped extends CoderConfig {
 
   private final boolean caseSensitive;
 
-  /**
-   * The constructor.
-   *
-   * @param alphabet the {@link Base#getAlphabet() alphabet}.
-   * @param padding the padding character.
-   */
+  /// The constructor.
+  ///
+  /// @param alphabet the [alphabet][Base#getAlphabet()].
+  /// @param padding the padding character.
   public CoderConfigMapped(String alphabet, char padding) {
 
     super();

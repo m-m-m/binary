@@ -4,28 +4,22 @@ package io.github.mmm.binary;
 
 import java.util.Objects;
 
-/**
- * Extends {@link BinaryType} with write operations from {@link WritableBinaryStream}.
- *
- * @since 1.0.0
- */
+/// Extends [BinaryType] with write operations from [WritableBinaryStream].
+///
+/// @since 1.0.0
 public class WritableBinaryType extends BinaryType implements WritableBinaryStream {
 
-  /**
-   * The constructor.
-   *
-   * @param data the raw binary {@link #getData() data}.
-   */
+  /// The constructor.
+  ///
+  /// @param data the raw binary [data][#getData()].
   public WritableBinaryType(byte[] data) {
 
     super(data);
   }
 
-  /**
-   * The constructor.
-   *
-   * @param base64 the {@link #getData() data} as {@link #formatBase64() base64}.
-   */
+  /// The constructor.
+  ///
+  /// @param base64 the [data][#getData()] as [base64][#formatBase64()].
   public WritableBinaryType(String base64) {
 
     super(base64);

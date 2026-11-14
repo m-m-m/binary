@@ -8,9 +8,7 @@ import org.assertj.core.api.Assertions;
 
 import io.github.mmm.binary.BinaryType;
 
-/**
- * Abstract base class for tests of {@link Base}.
- */
+/// Abstract base class for tests of [Base].
 class AbstractBaseTest extends Assertions {
 
   void check(BinaryCodec codec) {

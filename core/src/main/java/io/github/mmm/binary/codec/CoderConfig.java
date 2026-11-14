@@ -4,19 +4,15 @@ package io.github.mmm.binary.codec;
 
 import java.nio.charset.StandardCharsets;
 
-/**
- * Stateless config and factory for {@link Decoder} and {@link Encoder}.
- *
- * @since 1.0.0
- */
+/// Stateless config and factory for [Decoder] and [Encoder].
+///
+/// @since 1.0.0
 @SuppressWarnings("javadoc")
 abstract class CoderConfig {
 
   protected abstract Encoder encoder(BaseFormat format, byte[] data);
 
-  /**
-   * @return {@link Base#isCaseSensitive()}.
-   */
+  /// @return [Base#isCaseSensitive()].
   protected abstract boolean isCaseSensitive();
 
   protected String encode(byte[] data, BaseFormat format) {

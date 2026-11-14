@@ -10,12 +10,10 @@ import java.util.Objects;
 
 import io.github.mmm.base.exception.RuntimeIoException;
 
-/**
- * Implementation of {@link WritableBinaryStream} from a given {@link Blob}.
- *
- * @see #of(Blob)
- * @since 1.0.0
- */
+/// Implementation of [WritableBinaryStream] from a given [Blob].
+///
+/// @see #of(Blob)
+/// @since 1.0.0
 @SuppressWarnings("exports")
 public class BlobAsBinaryStream implements WritableBinaryStream {
 
@@ -27,9 +25,7 @@ public class BlobAsBinaryStream implements WritableBinaryStream {
     this.blob = blob;
   }
 
-  /**
-   * @return the contained {@link Blob}.
-   */
+  /// @return the contained [Blob].
   public Blob getBlob() {
 
     return this.blob;
@@ -103,10 +99,8 @@ public class BlobAsBinaryStream implements WritableBinaryStream {
     }
   }
 
-  /**
-   * @param blob the {@link Blob} to convert.
-   * @return the given {@link Blob} converted to {@link BinaryStream}.
-   */
+  /// @param blob the [Blob] to convert.
+  /// @return the given [Blob] converted to [BinaryStream].
   public static BinaryStream of(Blob blob) {
 
     if (blob == null) {

@@ -12,23 +12,19 @@ import java.util.Objects;
 import io.github.mmm.binary.codec.Base64;
 import io.github.mmm.binary.codec.BinaryCodec;
 
-/**
- * Datatype for binary data or BLOB (binary large object).
- *
- * @since 1.0.0
- */
+/// Datatype for binary data or BLOB (binary large object).
+///
+/// @since 1.0.0
 public class BinaryType implements Binary {
 
   private static final char[] HEX = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 
-  /** @see #getData() */
+  /// @see #getData()
   protected final byte[] data;
 
-  /**
-   * The constructor.
-   *
-   * @param data the raw binary {@link #getData() data}.
-   */
+  /// The constructor.
+  ///
+  /// @param data the raw binary [data][#getData()].
   public BinaryType(byte[] data) {
 
     super();
@@ -46,29 +42,23 @@ public class BinaryType implements Binary {
     this.data = data;
   }
 
-  /**
-   * The constructor (mainly for testing).
-   *
-   * @param base64 the {@link #getData() data} as {@link #formatBase64() base64}.
-   */
+  /// The constructor (mainly for testing).
+  ///
+  /// @param base64 the [data][#getData()] as [base64][#formatBase64()].
   public BinaryType(String base64) {
 
     this(parseBase64(base64));
   }
 
-  /**
-   * @return the minimum allowed length of the {@link #getData() data}. Implementation has to be static and return the
-   *         same value for each class with each call.
-   */
+  /// @return the minimum allowed length of the [data][#getData()]. Implementation has to be static and return the
+  ///         same value for each class with each call.
   protected int getMinLength() {
 
     return 0;
   }
 
-  /**
-   * @return the maximum allowed length of the {@link #getData() data}. Implementation has to be static and return the
-   *         same value for each class with each call.
-   */
+  /// @return the maximum allowed length of the [data][#getData()]. Implementation has to be static and return the
+  ///         same value for each class with each call.
   protected int getMaxLength() {
 
     return Integer.MAX_VALUE;
@@ -179,10 +169,8 @@ public class BinaryType implements Binary {
     return formatBase64();
   }
 
-  /**
-   * @param hex a {@link #formatHex() hex representation} of {@link #getData() BLOB data}.
-   * @return the parsed {@code hex} String.
-   */
+  /// @param hex a [hex representation][#formatHex()] of [BLOB data][#getData()].
+  /// @return the parsed `hex` String.
   public static byte[] parseHex(String hex) {
 
     int length = hex.length();
@@ -212,10 +200,8 @@ public class BinaryType implements Binary {
     return (byte) value;
   }
 
-  /**
-   * @param data the {@link #getData() data} to format.
-   * @return the given {@code data} formatted as hex {@link String}.
-   */
+  /// @param data the [data][#getData()] to format.
+  /// @return the given `data` formatted as hex [String].
   public static String formatHex(byte[] data) {
 
     char[] buffer = new char[data.length * 2];
@@ -227,29 +213,23 @@ public class BinaryType implements Binary {
     return new String(buffer);
   }
 
-  /**
-   * @param base64 the BLOB to parse as {@link java.util.Base64} encoded {@link String}.
-   * @return the parsed {@code base64} String.
-   */
+  /// @param base64 the BLOB to parse as [java.util.Base64] encoded [String].
+  /// @return the parsed `base64` String.
   public static byte[] parseBase64(String base64) {
 
     return Base64.DEFAULT.decode(base64);
   }
 
-  /**
-   * @param data the {@link #getData() data} to format.
-   * @return the given {@code data} formatted as {@link java.util.Base64} encoded {@link String} representation.
-   * @see #formatBase64()
-   */
+  /// @param data the [data][#getData()] to format.
+  /// @return the given `data` formatted as [java.util.Base64] encoded [String] representation.
+  /// @see #formatBase64()
   public static String formatBase64(byte[] data) {
 
     return Base64.DEFAULT.encode(data);
   }
 
-  /**
-   * @param value the {@code long} value.
-   * @return the value as array of 8 {@code byte}s.
-   */
+  /// @param value the `long` value.
+  /// @return the value as array of 8 `byte`s.
   public static byte[] toBytes(long value) {
 
     long v = value;
@@ -261,10 +241,8 @@ public class BinaryType implements Binary {
     return bytes;
   }
 
-  /**
-   * @param value the {@code int} value.
-   * @return the value as array of 4 {@code byte}s.
-   */
+  /// @param value the `int` value.
+  /// @return the value as array of 4 `byte`s.
   public static byte[] toBytes(int value) {
 
     int v = value;
@@ -276,10 +254,8 @@ public class BinaryType implements Binary {
     return bytes;
   }
 
-  /**
-   * @param data the long value as {@code byte[]} with a maximum length of 8 (see {@link #toBytes(long)}).
-   * @return the value {@code long}.
-   */
+  /// @param data the long value as `byte[]` with a maximum length of 8 (see [#toBytes(long)]).
+  /// @return the value `long`.
   public static long toLong(byte[] data) {
 
     assert (data.length <= 8);
@@ -291,10 +267,8 @@ public class BinaryType implements Binary {
     return v;
   }
 
-  /**
-   * @param data the long value as {@code byte[]} with a maximum length of 8 (see {@link #toBytes(long)}).
-   * @return the value {@code long}.
-   */
+  /// @param data the long value as `byte[]` with a maximum length of 8 (see [#toBytes(long)]).
+  /// @return the value `long`.
   public static long toInt(byte[] data) {
 
     assert (data.length <= 4);

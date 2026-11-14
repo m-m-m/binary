@@ -6,23 +6,19 @@ import java.util.Objects;
 
 import io.github.mmm.binary.Binary;
 
-/**
- * Implementation of {@link BinaryCodec} that applies a given {@link BaseFormat} to a {@link Base} codec.
- *
- * @since 1.0.0
- */
+/// Implementation of [BinaryCodec] that applies a given [BaseFormat] to a [Base] codec.
+///
+/// @since 1.0.0
 public class BaseFormatCodec implements BinaryCodec {
 
   private final Base base;
 
   private final BaseFormat format;
 
-  /**
-   * The constructor.
-   *
-   * @param base the raw {@link Base} encoder.
-   * @param format the {@link BaseFormat} to apply.
-   */
+  /// The constructor.
+  ///
+  /// @param base the raw [Base] encoder.
+  /// @param format the [BaseFormat] to apply.
   public BaseFormatCodec(Base base, BaseFormat format) {
 
     super();

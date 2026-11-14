@@ -2,12 +2,10 @@ package io.github.mmm.binary.codec;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Test of {@link Base10}.
- */
+/// Test of [Base10].
 public class Base10Test extends AbstractBaseTest {
 
-  /** Test of {@link Base16#DEFAULT}. */
+  /// Test of [Base16#DEFAULT].
   @Test
   void testDefault() {
 

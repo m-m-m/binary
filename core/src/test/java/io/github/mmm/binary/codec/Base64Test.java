@@ -2,12 +2,10 @@ package io.github.mmm.binary.codec;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Test of {@link Base64}.
- */
+/// Test of [Base64].
 public class Base64Test extends AbstractBaseTest {
 
-  /** Test of {@link Base64#DEFAULT}. */
+  /// Test of [Base64#DEFAULT].
   @Test
   void testDefault() {
 
@@ -33,7 +31,7 @@ public class Base64Test extends AbstractBaseTest {
     check(base64);
   }
 
-  /** Test of {@link Base64#URL}. */
+  /// Test of [Base64#URL].
   @Test
   void testUrl() {
 
@@ -48,7 +46,7 @@ public class Base64Test extends AbstractBaseTest {
     check(base64);
   }
 
-  /** Test of {@link Base64#DEFAULT} with mime encoding. */
+  /// Test of [Base64#DEFAULT] with mime encoding.
   @Test
   void testMime() {
 

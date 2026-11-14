@@ -2,19 +2,15 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package io.github.mmm.binary.codec;
 
-/**
- * {@link CoderConfig} for alphabet with length other than 2^x.
- *
- * @since 1.0.0
- */
+/// [CoderConfig] for alphabet with length other than 2^x.
+///
+/// @since 1.0.0
 @SuppressWarnings("javadoc")
 class CoderConfigDivMod extends CoderConfigMapped {
 
-  /**
-   * The constructor.
-   *
-   * @param alphabet the {@link Base#getAlphabet() alphabet}.
-   */
+  /// The constructor.
+  ///
+  /// @param alphabet the [alphabet][Base#getAlphabet()].
   public CoderConfigDivMod(String alphabet) {
 
     super(alphabet, BaseGeneric.NUL);

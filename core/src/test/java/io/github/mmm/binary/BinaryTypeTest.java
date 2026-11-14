@@ -3,9 +3,7 @@ package io.github.mmm.binary;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-/**
- * This is the test-case for {@link BinaryType}.
- */
+/// This is the test-case for [BinaryType].
 class BinaryTypeTest extends Assertions {
 
   private static final String SAMPLE_BLOB_HEX = "0123456789abcdef";
@@ -19,7 +17,7 @@ class BinaryTypeTest extends Assertions {
 
   private static final int LENGTH_MAX = 10;
 
-  /** Test {@link BinaryType#BinaryType(byte[])} with {@code null}. */
+  /// Test [BinaryType#BinaryType(byte[])] with `null`.
   @Test
   void testByteConstructorWithNull() {
 
@@ -27,7 +25,7 @@ class BinaryTypeTest extends Assertions {
         .isInstanceOf(NullPointerException.class);
   }
 
-  /** Test {@link BinaryType#BinaryType(byte[])} with too short data (too few bytes). */
+  /// Test [BinaryType#BinaryType(byte[])] with too short data (too few bytes).
   @Test
   void testByteConstructorTooShort() {
 
@@ -35,7 +33,7 @@ class BinaryTypeTest extends Assertions {
         .isInstanceOf(IllegalArgumentException.class);
   }
 
-  /** Test {@link BinaryType#BinaryType(byte[])} with too long data (too much bytes). */
+  /// Test [BinaryType#BinaryType(byte[])] with too long data (too much bytes).
   @Test
   void testByteConstructorTooLong() {
 
@@ -43,7 +41,7 @@ class BinaryTypeTest extends Assertions {
         .isInstanceOf(IllegalArgumentException.class);
   }
 
-  /** Test {@link BinaryType#BinaryType(String)} with {@code null}. */
+  /// Test [BinaryType#BinaryType(String)] with `null`.
   @Test
   void testStringConstructorWithNull() {
 
@@ -51,14 +49,14 @@ class BinaryTypeTest extends Assertions {
         .isInstanceOf(NullPointerException.class);
   }
 
-  /** Test {@link BinaryType#BinaryType(String)} with too short data (too few bytes). */
+  /// Test [BinaryType#BinaryType(String)] with too short data (too few bytes).
   @Test
   void testStringConstructorTooShort() {
 
     assertThatCode(() -> new Blob("")).as("new Blob(\"\")").isInstanceOf(IllegalArgumentException.class);
   }
 
-  /** Test {@link BinaryType#BinaryType(String)} with too long data (too much bytes). */
+  /// Test [BinaryType#BinaryType(String)] with too long data (too much bytes).
   @Test
   void testStringConstructorTooLong() {
 
@@ -74,14 +72,14 @@ class BinaryTypeTest extends Assertions {
         .isInstanceOf(IllegalArgumentException.class);
   }
 
-  /** Test {@link BinaryType#BinaryType(String)} with an odd number of hex characters. */
+  /// Test [BinaryType#BinaryType(String)] with an odd number of hex characters.
   @Test
   void testStringConstructorOdd() {
 
     assertThatCode(() -> new Blob("1")).as("new Blob(\"1\")").isInstanceOf(IllegalArgumentException.class);
   }
 
-  /** Test of {@link BinaryType#BinaryType(String)} with valid data. */
+  /// Test of [BinaryType#BinaryType(String)] with valid data.
   @Test
   void testStringConstructor() {
 
@@ -90,7 +88,7 @@ class BinaryTypeTest extends Assertions {
     assertThat(blob.isZeros()).isFalse();
   }
 
-  /** Test of {@link BinaryType#parseHex(String)} with valid data. */
+  /// Test of [BinaryType#parseHex(String)] with valid data.
   @Test
   void testParseHex() {
 
@@ -99,7 +97,7 @@ class BinaryTypeTest extends Assertions {
     assertThat(blob.isZeros()).isFalse();
   }
 
-  /** Test of {@link BinaryType#BinaryType(byte[])} with valid data. */
+  /// Test of [BinaryType#BinaryType(byte[])] with valid data.
   @Test
   void testByteConstructor() {
 
@@ -108,7 +106,7 @@ class BinaryTypeTest extends Assertions {
     assertThat(blob.isZeros()).isFalse();
   }
 
-  /** Test of {@link BinaryType} for equals and hashCode. */
+  /// Test of [BinaryType] for equals and hashCode.
   @Test
   void testEqualsAndHashCode() {
 
@@ -119,7 +117,7 @@ class BinaryTypeTest extends Assertions {
     assertThat(byteBlob).isNotEqualTo(null).isNotEqualTo("").isNotEqualTo(new Blob("12345678"));
   }
 
-  /** Test of {@link BinaryType#getMinLength()} and {@link BinaryType#getMaxLength()}. */
+  /// Test of [BinaryType#getMinLength()] and [BinaryType#getMaxLength()].
   @Test
   void testLengthDefaults() {
 
@@ -129,7 +127,7 @@ class BinaryTypeTest extends Assertions {
     assertThat(blob.getMaxLength()).isEqualTo(Integer.MAX_VALUE);
   }
 
-  /** Test of {@link BinaryType#toBytes(int)} and {@link BinaryType#toBytes(long)}. */
+  /// Test of [BinaryType#toBytes(int)] and [BinaryType#toBytes(long)].
   @Test
   void testToBytes() {
 
@@ -138,7 +136,7 @@ class BinaryTypeTest extends Assertions {
         0x032, 0x010);
   }
 
-  /** Test of {@link BinaryType#toInt(byte[])}. */
+  /// Test of [BinaryType#toInt(byte[])].
   @Test
   void testToInt() {
 
@@ -146,7 +144,7 @@ class BinaryTypeTest extends Assertions {
         .isEqualTo(0x0FEDCBA98);
   }
 
-  /** Test of {@link BinaryType#toLong(byte[])}. */
+  /// Test of [BinaryType#toLong(byte[])].
   @Test
   void testToLong() {
 

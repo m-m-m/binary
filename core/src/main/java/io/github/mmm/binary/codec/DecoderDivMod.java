@@ -4,11 +4,9 @@ package io.github.mmm.binary.codec;
 
 import java.util.Arrays;
 
-/**
- * Simple {@link Decoder} for alphabet with length other than 2^x.
- *
- * @since 1.0.0
- */
+/// Simple [Decoder] for alphabet with length other than 2^x.
+///
+/// @since 1.0.0
 @SuppressWarnings("javadoc")
 class DecoderDivMod extends Decoder {
 

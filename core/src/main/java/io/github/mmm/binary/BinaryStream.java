@@ -8,24 +8,18 @@ import java.io.OutputStream;
 
 import io.github.mmm.base.exception.RuntimeIoException;
 
-/**
- * Interface for an abstract BLOB that can be streamed.
- *
- * @see Binary
- * @see WritableBinaryStream
- * @since 1.0.0
- */
+/// Interface for an abstract BLOB that can be streamed.
+///
+/// @see Binary
+/// @see WritableBinaryStream
+/// @since 1.0.0
 public interface BinaryStream {
 
-  /**
-   * @return a new {@link InputStream} to read the underlying data.
-   */
+  /// @return a new [InputStream] to read the underlying data.
   InputStream openStream();
 
-  /**
-   * @param pos the number of bytes to {@link InputStream#skip(long) skip}.
-   * @return a new {@link InputStream} to read the underlying data.
-   */
+  /// @param pos the number of bytes to [skip][InputStream#skip(long)].
+  /// @return a new [InputStream] to read the underlying data.
   default InputStream openStream(long pos) {
 
     try (InputStream stream = openStream()) {
@@ -38,17 +32,13 @@ public interface BinaryStream {
     }
   }
 
-  /**
-   * @return the size of this BLOB in bytes.
-   */
+  /// @return the size of this BLOB in bytes.
   long getSize();
 
-  /**
-   * Saves the content of this binary stream into the given {@link OutputStream}. This is not a write operation on this
-   * binary stream.
-   *
-   * @param out the {@link OutputStream} to {@link OutputStream#write(byte[]) write} the data to.
-   */
+  /// Saves the content of this binary stream into the given [OutputStream]. This is not a write operation on this
+  /// binary stream.
+  ///
+  /// @param out the [OutputStream] to [write][OutputStream#write(byte[])] the data to.
   void save(OutputStream out);
 
 }

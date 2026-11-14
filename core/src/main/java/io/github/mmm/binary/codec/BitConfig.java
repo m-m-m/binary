@@ -2,11 +2,9 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package io.github.mmm.binary.codec;
 
-/**
- * Configuration of bit parameters for power-of-two codecs.
- *
- * @since 1.0.0
- */
+/// Configuration of bit parameters for power-of-two codecs.
+///
+/// @since 1.0.0
 class BitConfig {
 
   private static final BitConfig[] CONFIGS = new BitConfig[] {
