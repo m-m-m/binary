@@ -17,7 +17,7 @@ class BinaryTypeTest extends Assertions {
 
   private static final int LENGTH_MAX = 10;
 
-  /// Test [BinaryType#BinaryType(byte[])] with `null`.
+  /// Test [BinaryType#BinaryType(byte\[\])] with `null`.
   @Test
   void testByteConstructorWithNull() {
 
@@ -25,7 +25,7 @@ class BinaryTypeTest extends Assertions {
         .isInstanceOf(NullPointerException.class);
   }
 
-  /// Test [BinaryType#BinaryType(byte[])] with too short data (too few bytes).
+  /// Test [BinaryType#BinaryType(byte\[\])] with too short data (too few bytes).
   @Test
   void testByteConstructorTooShort() {
 
@@ -33,7 +33,7 @@ class BinaryTypeTest extends Assertions {
         .isInstanceOf(IllegalArgumentException.class);
   }
 
-  /// Test [BinaryType#BinaryType(byte[])] with too long data (too much bytes).
+  /// Test [BinaryType#BinaryType(byte\[\])] with too long data (too much bytes).
   @Test
   void testByteConstructorTooLong() {
 
@@ -97,7 +97,7 @@ class BinaryTypeTest extends Assertions {
     assertThat(blob.isZeros()).isFalse();
   }
 
-  /// Test of [BinaryType#BinaryType(byte[])] with valid data.
+  /// Test of [BinaryType#BinaryType(byte\[\])] with valid data.
   @Test
   void testByteConstructor() {
 
@@ -136,7 +136,7 @@ class BinaryTypeTest extends Assertions {
         0x032, 0x010);
   }
 
-  /// Test of [BinaryType#toInt(byte[])].
+  /// Test of [BinaryType#toInt(byte\[\])].
   @Test
   void testToInt() {
 
@@ -144,7 +144,7 @@ class BinaryTypeTest extends Assertions {
         .isEqualTo(0x0FEDCBA98);
   }
 
-  /// Test of [BinaryType#toLong(byte[])].
+  /// Test of [BinaryType#toLong(byte\[\])].
   @Test
   void testToLong() {
 

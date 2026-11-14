@@ -3,10 +3,9 @@
 package io.github.mmm.binary.codec;
 
 import io.github.mmm.base.number.NumberCodec;
-import io.github.mmm.binary.Binary;
 
-/// Interface for a coded that can [encode][#encode(byte[])] [binary data][Binary] to a [String] and
-/// [decode][#decode(String)] it back.
+/// Interface for a coded that can [encode][#encode(byte\[\])] [binary data][io.github.mmm.binary.Binary] to a
+/// [String] and [decode][#decode(String)] it back.
 ///
 /// @since 7.6.1
 public interface BinaryCodec {
@@ -53,7 +52,7 @@ public interface BinaryCodec {
     return encode(data);
   }
 
-  /// @param encodedData the [encoded][#encode(byte[])] [String].
+  /// @param encodedData the [encoded][#encode(byte\[\])] [String].
   /// @return the decoded data as `byte` array.
   byte[] decode(String encodedData);
 

@@ -2,7 +2,7 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package io.github.mmm.binary.codec;
 
-/// Stateful class to [encode][Base#encode(byte[])].
+/// Stateful class to [encode][Base#encode(byte\[\])].
 ///
 /// @since 1.0.0
 abstract class Encoder {
@@ -18,7 +18,7 @@ abstract class Encoder {
     this.input = input;
   }
 
-  /// @return the [encoded][BaseGeneric#encode(byte[])] [String].
+  /// @return the [encoded][BaseGeneric#encode(byte\[\])] [String].
   protected abstract String encode();
 
 }

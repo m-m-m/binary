@@ -38,7 +38,7 @@ public interface BinaryStream {
   /// Saves the content of this binary stream into the given [OutputStream]. This is not a write operation on this
   /// binary stream.
   ///
-  /// @param out the [OutputStream] to [write][OutputStream#write(byte[])] the data to.
+  /// @param out the [OutputStream] to [write][OutputStream#write(byte\[\])] the data to.
   void save(OutputStream out);
 
 }

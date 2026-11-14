@@ -6,8 +6,7 @@ import java.util.Objects;
 
 import io.github.mmm.binary.Binary;
 
-/// Implementation of [BinaryCodec] based on [alphabet][#getAlphabet()] of unique and visible ASCII
-/// characters.
+/// Implementation of [BinaryCodec] based on [alphabet][#getAlphabet()] of unique and visible ASCII characters.
 ///
 /// @since 1.0.0
 public abstract class Base implements BinaryCodec {
@@ -32,8 +31,8 @@ public abstract class Base implements BinaryCodec {
     return this.alphabet;
   }
 
-  /// @return `true` if case-sensitive (e.g. both 'a' and 'A' are used with different meanings), `false`
-  ///         otherwise (the case of Latin Ascii letters will be ignored).
+  /// @return `true` if case-sensitive (e.g. both 'a' and 'A' are used with different meanings), `false` otherwise (the
+  ///         case of Latin Ascii letters will be ignored).
   public abstract boolean isCaseSensitive();
 
   @Override
@@ -65,31 +64,30 @@ public abstract class Base implements BinaryCodec {
     return doDecode(encodedData, BaseFormat.DEFAULT);
   }
 
-  /// @param encodedData the [encoded][#encode(byte[])] [String]. Neither `null` nor
-  ///        [empty][String#isEmpty()].
+  /// @param encodedData the [encoded][#encode(byte\[\])] [String]. Neither `null` nor [empty][String#isEmpty()].
   /// @param format the [BaseFormat] to configure the decoding.
   /// @return the decoded data as `byte` array.
   protected abstract byte[] doDecode(String encodedData, BaseFormat format);
 
   /// @param c the illegal character.
-  /// @return nothing. Will always throw [IllegalArgumentException]. Return type may be used to call after
-  ///         `throw` statement to ensure program flow can not continue and compiler issues can be prevented.
+  /// @return nothing. Will always throw [IllegalArgumentException]. Return type may be used to call after `throw`
+  ///         statement to ensure program flow can not continue and compiler issues can be prevented.
   static RuntimeException illegalCharacter(char c) {
 
     return illegalCharacter(c, -1);
   }
 
   /// @param c the illegal character.
-  /// @return nothing. Will always throw [IllegalArgumentException]. Return type may be used to call after
-  ///         `throw` statement to ensure program flow can not continue and compiler issues can be prevented.
+  /// @return nothing. Will always throw [IllegalArgumentException]. Return type may be used to call after `throw`
+  ///         statement to ensure program flow can not continue and compiler issues can be prevented.
   static RuntimeException illegalCharacter(char c, int index) {
 
     return illegalCharacter("Illegal", c, index);
   }
 
   /// @param c the illegal character.
-  /// @return nothing. Will always throw [IllegalArgumentException]. Return type may be used to call after
-  ///         `throw` statement to ensure program flow can not continue and compiler issues can be prevented.
+  /// @return nothing. Will always throw [IllegalArgumentException]. Return type may be used to call after `throw`
+  ///         statement to ensure program flow can not continue and compiler issues can be prevented.
   static RuntimeException illegalCharacter(String errorType, char c, int index) {
 
     StringBuilder sb = new StringBuilder(40);
